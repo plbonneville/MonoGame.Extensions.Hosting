@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL", "src\MonoGame.Extensions.Hosting.DesktopGL\MonoGame.Extensions.Hosting.DesktopGL.csproj", "{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests.csproj", "{983FD059-593E-4626-89AF-4465F0048A74}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{86313242-DDA0-4A78-AB46-C84FE1982490}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{983FD059-593E-4626-89AF-4465F0048A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{983FD059-593E-4626-89AF-4465F0048A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{983FD059-593E-4626-89AF-4465F0048A74} = {86313242-DDA0-4A78-AB46-C84FE1982490}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0282F65-D340-4B42-8F25-F8C422B6B4C4}
+	EndGlobalSection
+EndGlobal
