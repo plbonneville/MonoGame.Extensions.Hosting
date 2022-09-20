@@ -13,6 +13,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests.csproj", "{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A7C3C142-8809-4F88-AB9E-2B1FE8B19379}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
