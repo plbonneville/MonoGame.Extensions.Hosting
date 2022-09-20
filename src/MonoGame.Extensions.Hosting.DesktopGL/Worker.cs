@@ -15,15 +15,11 @@ namespace MonoGame.Extensions.Hosting;
 /// </remarks>
 public class Worker : IHostedService
 {
-    private readonly GameApplicationOptions _options;
-    private readonly GameApplication _gameApplication;
-    private readonly Game _game;
-    private readonly IHostApplicationLifetime _appLifetime;
     private readonly IConfiguration _configuration;
-
-    internal static GraphicsDeviceManager? Graphics { get; private set; }
-
-    internal static ContentManager? ContentManager { get; private set; }
+    private readonly Game _game;
+    private readonly GameApplication _gameApplication;
+    private readonly GameApplicationOptions _options;
+    private readonly IHostApplicationLifetime _appLifetime;
 
     public Worker(GameApplicationOptions options, GameApplication gameApplication, Game game, IHostApplicationLifetime appLifetime, IConfiguration configuration)
     {
@@ -43,6 +39,10 @@ public class Worker : IHostedService
         ContentManager = game.Content;
         _configuration = configuration;
     }
+
+    internal static GraphicsDeviceManager? Graphics { get; private set; }
+
+    internal static ContentManager? ContentManager { get; private set; }
 
     public Task StartAsync(CancellationToken cancellationToken)
     {
