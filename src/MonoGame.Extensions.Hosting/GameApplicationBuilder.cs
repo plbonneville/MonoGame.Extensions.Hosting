@@ -5,7 +5,6 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Xna.Framework;
-using System;
 
 // https://andrewlock.net/exploring-dotnet-6-part-3-exploring-the-code-behind-webapplicationbuilder/
 namespace MonoGame.Extensions.Hosting;
@@ -25,20 +24,11 @@ public sealed class GameApplicationBuilder
         // Lazy-load the ConfigurationManager, so it isn't created if it is never used.
         // Don't capture the 'this' variable in AddSingleton, so GameApplicationBuilder can be GC'd.
         var configuration = new Lazy<ConfigurationManager>(() => new ConfigurationManager());
-        Services.AddSingleton<IConfiguration>(sp => configuration.Value);
+        Services.AddSingleton<IConfiguration>(_ => configuration.Value);
 
         _configuration = configuration;
 
         _options = options;
-
-
-
-
-
-
-
-
-
     }
 
     /// <summary>
@@ -89,7 +79,7 @@ public sealed class GameApplicationBuilder
         });
 
         // Copy the services that were added via GameApplicationBuilder.Services into the final IServiceCollection
-        _hostBuilder.ConfigureServices((hostContext, services) =>
+        _hostBuilder.ConfigureServices((_, services) =>
         {
             foreach (var s in Services)
             {
@@ -113,14 +103,13 @@ public sealed class GameApplicationBuilder
                 _options,
                 _builtApplication!,
                 serviceProvider.GetService<Game>()!,
-                serviceProvider.GetService<IHostApplicationLifetime>()!,
-                serviceProvider.GetService<IConfiguration>()!));
+                serviceProvider.GetService<IHostApplicationLifetime>()!));
 
         Services.AddSingleton<Game, TGame>();
 
-        Services.AddSingleton(p => Worker.Graphics!);
-        Services.AddSingleton(p => Worker.Graphics!.GraphicsDevice!);
-        Services.AddScoped(provider => Worker.ContentManager!);
+        Services.AddSingleton(_ => Worker.Graphics!);
+        Services.AddSingleton(_ => Worker.Graphics!.GraphicsDevice!);
+        Services.AddScoped(_ => Worker.ContentManager!);
 
         return this;
     }

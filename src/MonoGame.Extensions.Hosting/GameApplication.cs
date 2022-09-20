@@ -1,14 +1,8 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MonoGame.Extensions.Hosting;
-
 
 /// <summary>
 /// 
@@ -20,25 +14,24 @@ namespace MonoGame.Extensions.Hosting;
 public sealed class GameApplication : IDisposable
 {
     private readonly IHost _host;
-    private readonly IServiceProvider _services;
 
     internal GameApplication(IHost host, IServiceProvider services)
     {
         _host = host;
-        _services = services;
+        Services = services;
     }
 
     /// <summary>
     /// The application's configured services.
     /// </summary>
-    public IServiceProvider Services => _services;
+    public IServiceProvider Services { get; }
 
     /// <summary>
     /// The application's configured <see cref="IConfiguration"/>.
     /// </summary>
-    public IConfiguration Configuration => _services.GetRequiredService<IConfiguration>();
+    public IConfiguration Configuration => Services.GetRequiredService<IConfiguration>();
 
-    public static GameApplicationBuilder CreateBuilder(params string[] args) => new(new() { Args = args });
+    public static GameApplicationBuilder CreateBuilder(params string[] args) => new(new GameApplicationOptions { Args = args });
 
     public static GameApplicationBuilder CreateBuilder(GameApplicationOptions options) => new(options);
 
@@ -58,12 +51,8 @@ public sealed class GameApplication : IDisposable
         // won't dispose.
         (Configuration as IDisposable)?.Dispose();
 
-        (_services as IDisposable)?.Dispose();
+        (Services as IDisposable)?.Dispose();
 
-        _host?.Dispose();
+        _host.Dispose();
     }
-}
-
-public static class GameApplicationExtensions
-{
 }

@@ -1,5 +1,4 @@
-﻿using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.Hosting;
+﻿using Microsoft.Extensions.Hosting;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework;
 using System.Reflection;
@@ -15,16 +14,15 @@ namespace MonoGame.Extensions.Hosting;
 /// </remarks>
 public class Worker : IHostedService
 {
-    private readonly IConfiguration _configuration;
     private readonly Game _game;
     private readonly GameApplication _gameApplication;
     private readonly GameApplicationOptions _options;
     private readonly IHostApplicationLifetime _appLifetime;
 
-    public Worker(GameApplicationOptions options, GameApplication gameApplication, Game game, IHostApplicationLifetime appLifetime, IConfiguration configuration)
+    public Worker(GameApplicationOptions options, GameApplication gameApplication, Game game, IHostApplicationLifetime appLifetime)
     {
         _options = options ?? throw new ArgumentNullException(nameof(options));
-        _gameApplication = gameApplication ?? throw new ArgumentNullException(nameof(gameApplication)); ;
+        _gameApplication = gameApplication ?? throw new ArgumentNullException(nameof(gameApplication));
         _game = game ?? throw new ArgumentNullException(nameof(game));
         _appLifetime = appLifetime ?? throw new ArgumentNullException(nameof(appLifetime));
 
@@ -38,7 +36,6 @@ public class Worker : IHostedService
         Graphics = graphicsDeviceManagerValue ?? new GraphicsDeviceManager(game);
 
         ContentManager = game.Content;
-        _configuration = configuration;
     }
 
     internal static GraphicsDeviceManager? Graphics { get; private set; }

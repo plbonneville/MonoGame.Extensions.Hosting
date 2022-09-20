@@ -322,7 +322,7 @@ public class HostBuilderServicesTests
         Assert.NotNull(logger);
     }
 
-    static void AssertTransient<TInterface, TConcrete>(IServiceProvider services)
+    private static void AssertTransient<TInterface, TConcrete>(IServiceProvider services)
     {
         var service1 = services.GetService<TInterface>();
 
@@ -337,7 +337,7 @@ public class HostBuilderServicesTests
         Assert.NotEqual(service1, service2);
     }
 
-    static void AssertSingleton<TInterface, TConcrete>(IServiceProvider services)
+    private static void AssertSingleton<TInterface, TConcrete>(IServiceProvider services)
     {
         var service1 = services.GetService<TInterface>();
 
