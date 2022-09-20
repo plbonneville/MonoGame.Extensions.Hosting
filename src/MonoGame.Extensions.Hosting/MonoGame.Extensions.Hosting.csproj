@@ -19,7 +19,6 @@
   </ItemGroup>
 
   <ItemGroup Condition=" $(TargetFramework.Contains('-windows')) ">
-    <PackageReference Include="MonoGame.Framework.WindowsDX" Version="3.8.1.303" />
   </ItemGroup>
 
 </Project>
