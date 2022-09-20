@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MonoGame.Extensions.Hosting.DesktopGL.UnitTests;
+namespace MonoGame.Extensions.Hosting.UnitTests;
 
 interface IFooService
 {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 
-namespace MonoGame.Extensions.Hosting.DesktopGL.UnitTests;
+namespace MonoGame.Extensions.Hosting.UnitTests;
 
 /// <remarks>
 /// Based on:

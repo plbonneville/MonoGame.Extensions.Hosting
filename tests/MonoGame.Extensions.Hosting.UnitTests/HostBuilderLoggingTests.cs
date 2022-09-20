@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 
-namespace MonoGame.Extensions.Hosting.DesktopGL.UnitTests;
+namespace MonoGame.Extensions.Hosting.UnitTests;
 
 public class HostBuilderLoggingTests
 {

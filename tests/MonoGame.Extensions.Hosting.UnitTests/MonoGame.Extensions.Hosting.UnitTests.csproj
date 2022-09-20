@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net6.0-windows</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
 
@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MonoGame.Extensions.Hosting.DesktopGL\MonoGame.Extensions.Hosting.DesktopGL.csproj" />
+    <ProjectReference Include="..\..\src\MonoGame.Extensions.Hosting\MonoGame.Extensions.Hosting.csproj" />
   </ItemGroup>
 
 </Project>

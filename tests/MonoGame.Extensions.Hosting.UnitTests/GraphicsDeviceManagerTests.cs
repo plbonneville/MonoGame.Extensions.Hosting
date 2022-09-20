@@ -1,7 +1,7 @@
 using Microsoft.Xna.Framework;
 using System.Reflection;
 
-namespace MonoGame.Extensions.Hosting.DesktopGL.UnitTests;
+namespace MonoGame.Extensions.Hosting.UnitTests;
 
 public class GraphicsDeviceManagerTests
 {

@@ -3,17 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL", "src\MonoGame.Extensions.Hosting.DesktopGL\MonoGame.Extensions.Hosting.DesktopGL.csproj", "{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests.csproj", "{983FD059-593E-4626-89AF-4465F0048A74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting", "src\MonoGame.Extensions.Hosting\MonoGame.Extensions.Hosting.csproj", "{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{86313242-DDA0-4A78-AB46-C84FE1982490}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Extensions.Hosting.DesktopGL.UnitTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.UnitTests\MonoGame.Extensions.Hosting.DesktopGL.UnitTests.csproj", "{1C0BE674-02ED-4935-92F6-6869FD5967F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.UnitTests", "tests\MonoGame.Extensions.Hosting.UnitTests\MonoGame.Extensions.Hosting.UnitTests.csproj", "{1C0BE674-02ED-4935-92F6-6869FD5967F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Extensions.Hosting.WindowsDX", "src\MonoGame.Extensions.Hosting.WindowsDX\MonoGame.Extensions.Hosting.WindowsDX.csproj", "{B7917DE5-19AF-4769-AD7C-03EC5C5BDC1E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests", "tests\MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests\MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests.csproj", "{8BE35AF9-DA84-482F-8858-0BC30AED358C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests", "tests\MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests\MonoGame.Extensions.Hosting.WindowsDX.IntegrationTests.csproj", "{8BE35AF9-DA84-482F-8858-0BC30AED358C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests\MonoGame.Extensions.Hosting.DesktopGL.IntegrationTests.csproj", "{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,30 +23,26 @@ Global
 		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AED1CC0-C84C-4A1D-B7DD-791C3A4DAFA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{983FD059-593E-4626-89AF-4465F0048A74}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{983FD059-593E-4626-89AF-4465F0048A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7917DE5-19AF-4769-AD7C-03EC5C5BDC1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7917DE5-19AF-4769-AD7C-03EC5C5BDC1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7917DE5-19AF-4769-AD7C-03EC5C5BDC1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7917DE5-19AF-4769-AD7C-03EC5C5BDC1E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8BE35AF9-DA84-482F-8858-0BC30AED358C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8BE35AF9-DA84-482F-8858-0BC30AED358C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8BE35AF9-DA84-482F-8858-0BC30AED358C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8BE35AF9-DA84-482F-8858-0BC30AED358C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{983FD059-593E-4626-89AF-4465F0048A74} = {86313242-DDA0-4A78-AB46-C84FE1982490}
 		{1C0BE674-02ED-4935-92F6-6869FD5967F9} = {86313242-DDA0-4A78-AB46-C84FE1982490}
 		{8BE35AF9-DA84-482F-8858-0BC30AED358C} = {86313242-DDA0-4A78-AB46-C84FE1982490}
+		{9D8C7712-C84D-47D1-AD95-27ACE42F2A5D} = {86313242-DDA0-4A78-AB46-C84FE1982490}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0282F65-D340-4B42-8F25-F8C422B6B4C4}
