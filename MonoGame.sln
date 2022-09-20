@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{86313242-DDA0-4A78-AB46-C84FE1982490}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Extensions.Hosting.DesktopGL.UnitTests", "tests\MonoGame.Extensions.Hosting.DesktopGL.UnitTests\MonoGame.Extensions.Hosting.DesktopGL.UnitTests.csproj", "{1C0BE674-02ED-4935-92F6-6869FD5967F9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,12 +25,17 @@ Global
 		{983FD059-593E-4626-89AF-4465F0048A74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{983FD059-593E-4626-89AF-4465F0048A74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C0BE674-02ED-4935-92F6-6869FD5967F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{983FD059-593E-4626-89AF-4465F0048A74} = {86313242-DDA0-4A78-AB46-C84FE1982490}
+		{1C0BE674-02ED-4935-92F6-6869FD5967F9} = {86313242-DDA0-4A78-AB46-C84FE1982490}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D0282F65-D340-4B42-8F25-F8C422B6B4C4}
