@@ -34,6 +34,7 @@ public class Worker : IHostedService
 
         var graphicsDeviceManagerValue = graphicsDeviceManagerProperty!.GetValue(game) as GraphicsDeviceManager;
 
+        // If the GraphicsDeviceManager was not instantiated in the Game contructor, create it now.
         Graphics = graphicsDeviceManagerValue ?? new GraphicsDeviceManager(game);
 
         ContentManager = game.Content;
