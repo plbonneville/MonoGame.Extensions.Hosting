@@ -2,18 +2,15 @@
 
   <PropertyGroup Label="Build">
     <TargetFramework>net6.0</TargetFramework>
+    <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>MonoGame.Extensions.Hosting</AssemblyName>
     <RootNamespace>MonoGame.Extensions.Hosting</RootNamespace>
-
-    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    
     <Authors>Pier-Luc Bonneville</Authors>
     <Company />
     <Copyright>Pier-Luc Bonneville</Copyright>
-   
     <RepositoryUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
@@ -34,7 +31,12 @@
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="MinVer" Version="4.2.0">
+    <!--<PackageReference Include="MinVer" Version="4.2.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>-->
+
+    <PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
