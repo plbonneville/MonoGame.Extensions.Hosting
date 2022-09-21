@@ -1,29 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
+  <PropertyGroup Label="Build">
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <AssemblyName>MonoGame.Extensions.Hosting</AssemblyName>
     <RootNamespace>MonoGame.Extensions.Hosting</RootNamespace>
 
-    <PackageTags>MonoGame, Hosting, DesktopGL, WindowsDX</PackageTags>
+    
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    
     <Authors>Pier-Luc Bonneville</Authors>
     <Company />
-    <!-- <Version>1.0.1</Version> -->
     <Copyright>Pier-Luc Bonneville</Copyright>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</PackageProjectUrl>
+   
     <RepositoryUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
 
+  <PropertyGroup Label="Package">
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <Product>MonoGame.Extensions.Hosting</Product>
-    <!-- <AssemblyVersion>1.0.1</AssemblyVersion>
-    <FileVersion>1.0.1</FileVersion> -->
     <Description>Hosting and startup infrastructures for MonoGame applications.</Description>
+    <PackageTags>MonoGame, Hosting, DesktopGL, WindowsDX</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</PackageProjectUrl>
   </PropertyGroup>
 
   <ItemGroup>
