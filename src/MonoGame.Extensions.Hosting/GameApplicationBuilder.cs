@@ -9,6 +9,9 @@ using Microsoft.Xna.Framework;
 // https://andrewlock.net/exploring-dotnet-6-part-3-exploring-the-code-behind-webapplicationbuilder/
 namespace MonoGame.Extensions.Hosting;
 
+/// <summary>
+/// A builder for MonoGame applications and services.
+/// </summary>
 public sealed class GameApplicationBuilder
 {
     private readonly GameApplicationServiceCollection _services = new();
@@ -99,17 +102,17 @@ public sealed class GameApplicationBuilder
         where TGame : Game
     {
         Services.AddHostedService(serviceProvider =>
-            new Worker(
+            new GameHostService(
                 _options,
                 _builtApplication!,
-                serviceProvider.GetService<Game>()!,
+                serviceProvider.GetService<TGame>()!,
                 serviceProvider.GetService<IHostApplicationLifetime>()!));
 
-        Services.AddSingleton<Game, TGame>();
+        Services.AddSingleton<TGame>();
 
-        Services.AddSingleton(_ => Worker.Graphics!);
-        Services.AddSingleton(_ => Worker.Graphics!.GraphicsDevice!);
-        Services.AddScoped(_ => Worker.ContentManager!);
+        Services.AddSingleton(_ => GameHostService.Graphics!);
+        Services.AddSingleton(_ => GameHostService.Graphics!.GraphicsDevice!);
+        Services.AddSingleton(_ => GameHostService.ContentManager!);
 
         return this;
     }
