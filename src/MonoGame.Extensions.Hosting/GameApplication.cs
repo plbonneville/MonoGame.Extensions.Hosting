@@ -37,12 +37,12 @@ public sealed class GameApplication : IDisposable
 
     public void Run()
     {
-        _host.RunAsync().GetAwaiter().GetResult();
+        HostingAbstractionsHostExtensions.Run(_host);
     }
 
-    public async Task RunAsync()
+    public Task RunAsync(CancellationToken cancellationToken = default)
     {
-        await _host.RunAsync();
+        return HostingAbstractionsHostExtensions.RunAsync(_host, cancellationToken);
     }
 
     public void Dispose()
