@@ -5,36 +5,44 @@
     <TreatWarningsAsErrors>True</TreatWarningsAsErrors>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <AssemblyName>MonoGame.Extensions.Hosting</AssemblyName>
-    <RootNamespace>MonoGame.Extensions.Hosting</RootNamespace>
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package">
+    <!--<GeneratePackageOnBuild>true</GeneratePackageOnBuild>-->
+    <Product>MonoGame.Extensions.Hosting</Product>
+    <Description>Hosting and startup infrastructures for MonoGame applications.</Description>
     <Authors>Pier-Luc Bonneville</Authors>
     <Company />
-    <Copyright>Pier-Luc Bonneville</Copyright>
+    <Copyright>© Pier-Luc Bonneville. All rights reserved.</Copyright>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</PackageProjectUrl>
+    <PackageTags>MonoGame, Hosting, DesktopGL, WindowsDX</PackageTags>
+    <PackageIcon>logo_128x128.png</PackageIcon>
     <RepositoryUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
   </PropertyGroup>
 
-  <PropertyGroup Label="Package">
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <Product>MonoGame.Extensions.Hosting</Product>
-    <Description>Hosting and startup infrastructures for MonoGame applications.</Description>
-    <PackageTags>MonoGame, Hosting, DesktopGL, WindowsDX</PackageTags>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</PackageProjectUrl>
-  </PropertyGroup>
+  <ItemGroup>
+    <None Include="..\..\assets\logo\logo_128x128.png" Pack="true" PackagePath=""/>
+  </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
+    <!-- <PackageReference Include="GitVersion.MsBuild" Version="5.10.3">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-    </PackageReference>
+    </PackageReference> -->
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="6.0.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.1.303">
       <PrivateAssets>All</PrivateAssets>
     </PackageReference>
     <PackageReference Include="System.ComponentModel.Composition" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="$(AssemblyName).IntegrationTests" />
+    <InternalsVisibleTo Include="$(AssemblyName).UnitTests" />
   </ItemGroup>
 
 </Project>
