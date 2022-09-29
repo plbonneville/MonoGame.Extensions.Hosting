@@ -6,20 +6,22 @@ using System.Reflection;
 namespace MonoGame.Extensions.Hosting;
 
 /// <summary>
-/// 
+/// https://andrewlock.net/introducing-ihostlifetime-and-untangling-the-generic-host-startup-interactions/
 /// </summary>
-/// <remarks>
-/// Should I rename this to GameShell?
-/// https://docs.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/shell/
-/// </remarks>
-public class Worker : IHostedService
+internal sealed class GameHostService : IHostedService
 {
+    // Used to stop the host service in the integration tests
+    // TODO: Replace this property with a CancellationTokenSource to allow cancelling executing task from provided token. This would allow us to run the integration tests in paralle.
+    // https://github.com/dotnet/extensions/issues/3218
+    // https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Hosting.Abstractions/src/BackgroundService.cs
+    internal static IHostedService? HostService { get; private set; }
+
     private readonly Game _game;
     private readonly GameApplication _gameApplication;
     private readonly GameApplicationOptions _options;
     private readonly IHostApplicationLifetime _appLifetime;
 
-    public Worker(GameApplicationOptions options, GameApplication gameApplication, Game game, IHostApplicationLifetime appLifetime)
+    public GameHostService(GameApplicationOptions options, GameApplication gameApplication, Game game, IHostApplicationLifetime appLifetime)
     {
         _options = options ?? throw new ArgumentNullException(nameof(options));
         _gameApplication = gameApplication ?? throw new ArgumentNullException(nameof(gameApplication));
@@ -36,6 +38,8 @@ public class Worker : IHostedService
         Graphics = graphicsDeviceManagerValue ?? new GraphicsDeviceManager(game);
 
         ContentManager = game.Content;
+
+        HostService = this;
     }
 
     internal static GraphicsDeviceManager? Graphics { get; private set; }
@@ -69,6 +73,7 @@ public class Worker : IHostedService
     {
         _options.OnStarted?.Invoke(_gameApplication);
 
+        //_game.Run(GameRunBehavior.Synchronous);
         _game.Run();
     }
 
