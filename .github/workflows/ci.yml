@@ -1,0 +1,41 @@
+name: Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    env:
+      BUILD_CONFIG: "Release"
+      SOLUTION: "MonoGame.Extensions.Hosting.sln"
+
+    runs-on: ubuntu-latest
+
+    # name: build-${{ matrix.os }}
+    # runs-on: ${{ matrix.os }}
+    # strategy:
+    #   matrix:
+    #     os: [windows-latest, macos-latest, ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup dotnet 6.0
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Remove the WindowsDX sample if not on Windows
+        if: runner.os != 'Windows'
+        run: dotnet sln remove ./samples/platforms/Examples.WindowsDX/
+
+      - name: Install dependencies
+        run: dotnet restore $SOLUTION
+
+      - name: Build
+        run: dotnet build --nologo --configuration $BUILD_CONFIG --no-restore $SOLUTION
+
+      - name: Test
+        run: dotnet test --nologo --configuration $BUILD_CONFIG --no-restore --no-build --verbosity normal $SOLUTION
+
+      - name: Pack
+        run: dotnet pack --nologo --configuration $BUILD_CONFIG --no-restore --no-build $SOLUTION
