@@ -1,6 +1,9 @@
 ﻿namespace MonoGame.Extensions.Hosting;
 
-public class GameApplicationOptions
+/// <summary>
+/// Options for configuring the behavior for CreateBuilder(GameApplicationOptions).
+/// </summary>
+public sealed class GameApplicationOptions
 {
     public string[]? Args { get; init; }
 
