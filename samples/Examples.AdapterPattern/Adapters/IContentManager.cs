@@ -24,7 +24,7 @@ public interface IContentManager
 /// All invocations (properties and methods) are delegated to the underlying type (the adaptee).
 /// https://en.wikipedia.org/wiki/Adapter_pattern
 /// </remarks>
-internal class ContentManagerWrapper : IContentManager
+internal sealed class ContentManagerWrapper : IContentManager
 {
     public ContentManagerWrapper(ContentManager contentManager)
     {

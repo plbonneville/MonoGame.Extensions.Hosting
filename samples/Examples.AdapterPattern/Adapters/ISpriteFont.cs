@@ -20,7 +20,7 @@ public interface ISpriteFont
 /// All invocations (properties and methods) are delegated to the underlying type (the adaptee).
 /// https://en.wikipedia.org/wiki/Adapter_pattern
 /// </remarks>
-internal class SpriteFontAdapter : ISpriteFont
+internal sealed class SpriteFontAdapter : ISpriteFont
 {
     public SpriteFontAdapter(SpriteFont texture) => SpriteFontAdaptee = texture;
 

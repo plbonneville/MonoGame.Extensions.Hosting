@@ -20,7 +20,7 @@ public interface ITexture2D
 /// All invocations (properties and methods) are delegated to the underlying type (the adaptee).
 /// https://en.wikipedia.org/wiki/Adapter_pattern
 /// </remarks>
-internal class Texture2DAdapter : ITexture2D
+internal sealed class Texture2DAdapter : ITexture2D
 {
     public Texture2DAdapter(Texture2D texture) => Texture2DAdaptee = texture;
 
