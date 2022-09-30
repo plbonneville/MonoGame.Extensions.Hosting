@@ -7,14 +7,16 @@ jobs:
     env:
       BUILD_CONFIG: "Release"
       SOLUTION: "MonoGame.Extensions.Hosting.sln"
+      PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
 
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest
 
-    # name: build-${{ matrix.os }}
-    # runs-on: ${{ matrix.os }}
-    # strategy:
-    #   matrix:
-    #     os: [windows-latest, macos-latest, ubuntu-latest]
+    name: build-${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [windows-latest, ubuntu-latest]
+        # os: [windows-latest, macos-latest, ubuntu-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -38,4 +40,5 @@ jobs:
         run: dotnet test --nologo --configuration $BUILD_CONFIG --no-restore --no-build --verbosity normal $SOLUTION
 
       - name: Pack
-        run: dotnet pack --nologo --configuration $BUILD_CONFIG --no-restore --no-build $SOLUTION
+        if: matrix.os == 'ubuntu-latest'
+        run: dotnet pack --nologo --configuration $BUILD_CONFIG --no-restore --no-build $PROJECT
