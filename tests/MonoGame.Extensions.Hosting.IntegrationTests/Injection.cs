@@ -8,10 +8,13 @@ internal static class Injection
 {
     public static void Replace(MethodInfo methodToReplace, MethodInfo methodToInject)
     {
-        //if (Debugger.IsAttached)
-        //{
-        //    throw new NotSupportedException("In debug, the compiler adds some middleman code and we might not have the right address.");
-        //}
+        _ = methodToReplace ?? throw new ArgumentNullException(nameof(methodToReplace));
+        _ = methodToInject ?? throw new ArgumentNullException(nameof(methodToInject));
+
+        if (Debugger.IsAttached)
+        {
+            throw new NotSupportedException("In debug, the compiler adds some middleman code and we might not have the right address.");
+        }
 
         RuntimeHelpers.PrepareMethod(methodToReplace.MethodHandle);
         RuntimeHelpers.PrepareMethod(methodToInject.MethodHandle);
@@ -53,7 +56,7 @@ internal static class Injection
             int index = (int)(((*methodDesc) >> 32) & 0xFF);
             if (IntPtr.Size == 4)
             {
-                uint* classStart = (uint*)methodToReplace.DeclaringType.TypeHandle.Value.ToPointer();
+                uint* classStart = (uint*)methodToReplace!.DeclaringType!.TypeHandle.Value.ToPointer();
                 classStart += 10;
                 classStart = (uint*)*classStart;
                 uint* tar = classStart + index;
@@ -64,7 +67,7 @@ internal static class Injection
             }
             else
             {
-                ulong* classStart = (ulong*)methodToReplace.DeclaringType.TypeHandle.Value.ToPointer();
+                ulong* classStart = (ulong*)methodToReplace!.DeclaringType!.TypeHandle.Value.ToPointer();
                 classStart += 8;
                 classStart = (ulong*)*classStart;
                 ulong* tar = classStart + index;

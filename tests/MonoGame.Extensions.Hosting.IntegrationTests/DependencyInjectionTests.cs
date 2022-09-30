@@ -44,10 +44,10 @@ public class DependencyInjectionTests
 
     class MockGame : Game
     {
-        private static readonly MethodInfo MethodToReplace = typeof(Game).GetMethod("Run", BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public, new Type[] { typeof(GameRunBehavior) });
+        private static readonly MethodInfo MethodToReplace = typeof(Game).GetMethod("Run", BindingFlags.Instance | BindingFlags.Static | BindingFlags.NonPublic | BindingFlags.Public, new Type[] { typeof(GameRunBehavior) })!;
         private static readonly MethodInfo MethodToInject = new Action<GameRunBehavior>(_ =>
         {
-            GameHostService.HostService.StopAsync(CancellationToken.None);
+            GameHostService.HostService!.StopAsync(CancellationToken.None);
         }).Method;
 
         static MockGame()
