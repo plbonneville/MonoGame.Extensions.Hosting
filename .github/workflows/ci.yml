@@ -62,7 +62,7 @@ jobs:
     env:
       PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
     name: publish
-    needs: [build]
+    needs: [changes, build]
     if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && needs.changes.outputs.src == 'true' }}
     runs-on: ubuntu-latest
 
