@@ -52,11 +52,11 @@ jobs:
         run: dotnet build $SOLUTION --nologo --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test $SOLUTION --nologo --no-restore --no-build --verbosity normal --configuration $BUILD_CONFIG
+        run: dotnet test $SOLUTION --nologo --no-restore --no-build --verbosity normal --configuration Release
 
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
-        run: dotnet pack $PROJECT --nologo --no-restore --no-build --configuration $BUILD_CONFIG
+        run: dotnet pack $PROJECT --nologo --no-restore --no-build --configuration Release
 
   publish:
     env:
