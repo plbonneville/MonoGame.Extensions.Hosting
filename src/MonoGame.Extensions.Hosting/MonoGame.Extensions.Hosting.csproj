@@ -17,7 +17,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</PackageProjectUrl>
-    <PackageTags>MonoGame, Hosting, DesktopGL, WindowsDX</PackageTags>
+    <PackageTags>MonoGame, Hosting, Dependency Injection, DesktopGL, WindowsDX</PackageTags>
     <PackageIcon>logo_128x128.png</PackageIcon>
     <RepositoryUrl>https://github.com/plbonneville/MonoGame.Extensions.Hosting</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
