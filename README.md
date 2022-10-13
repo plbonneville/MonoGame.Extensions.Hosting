@@ -1,4 +1,4 @@
-# MonoGame.Extensions.Hosting
+# MonoGame.Extensions.Hosting <img src ="./assets/logo/logo_128x128.png" width="64px" alt="dotnet bot in space" align ="right">
 
 Hosting and startup infrastructures for MonoGame applications.
 
@@ -146,6 +146,6 @@ await game.RunAsync();
 
 ## Further Reading
 
-- [.NET Generic Host](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host)
 - [Dependency injection in .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/dependency-injection)
 - [Configuration providers in .NET](https://learn.microsoft.com/en-us/dotnet/core/extensions/configuration-providers)
+- [.NET Generic Host](https://learn.microsoft.com/en-us/dotnet/core/extensions/generic-host)
