@@ -31,11 +31,11 @@ jobs:
         run: dotnet restore $SOLUTION
 
       - name: Build
-        run: dotnet build --nologo --configuration $BUILD_CONFIG --no-restore $SOLUTION
+        run: dotnet build $SOLUTION --nologo --no-restore --configuration $BUILD_CONFIG
 
       - name: Test
-        run: dotnet test --nologo --configuration $BUILD_CONFIG --no-restore --no-build --verbosity normal $SOLUTION
+        run: dotnet test $SOLUTION --nologo --no-restore --no-build --verbosity normal --configuration $BUILD_CONFIG
 
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
-        run: dotnet pack --nologo --configuration $BUILD_CONFIG --no-restore --no-build $PROJECT
+        run: dotnet pack $PROJECT --nologo --no-restore --no-build --configuration $BUILD_CONFIG
