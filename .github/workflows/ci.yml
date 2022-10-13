@@ -1,6 +1,6 @@
-name: Build and Test
+name: Build, Test, and Publish
 
-on: [pull_request]
+on: [push, pull_request]
 
 jobs:
   build:
@@ -39,3 +39,30 @@ jobs:
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
         run: dotnet pack $PROJECT --nologo --no-restore --no-build --configuration $BUILD_CONFIG
+
+  publish:
+    env:
+      PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
+    name: publish
+    needs: [build]
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v1
+        with:
+          dotnet-version: "6.0.x"
+
+      - name: Restore dependencies
+        run: dotnet restore $PROJECT
+
+      - name: Publish NuGet package
+        uses: brandedoutcast/publish-nuget@v2
+        with:
+          # Filepath of the project to be packaged, relative to root of repository
+          PROJECT_FILE_PATH: $PROJECT
+          # API key to authenticate with NuGet server
+          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
