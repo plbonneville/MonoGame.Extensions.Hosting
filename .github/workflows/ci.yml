@@ -3,6 +3,24 @@ name: Build, Test, and Publish
 on: [push, pull_request]
 
 jobs:
+  # JOB to run change detection
+  changes:
+    runs-on: ubuntu-latest
+    # Required permissions
+    permissions:
+      pull-requests: read
+    # Set job outputs to values from filter step
+    outputs:
+      src: ${{ steps.filter.outputs.src }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            src:
+              - 'src/**'
+
   build:
     env:
       BUILD_CONFIG: "Release"
@@ -45,7 +63,7 @@ jobs:
       PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
     name: publish
     needs: [build]
-    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' }}
+    if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/master' && needs.changes.outputs.src == 'true' }}
     runs-on: ubuntu-latest
 
     steps:
