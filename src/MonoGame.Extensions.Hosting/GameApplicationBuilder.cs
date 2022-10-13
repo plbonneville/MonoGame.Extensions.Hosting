@@ -6,9 +6,10 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Logging.Abstractions;
 using Microsoft.Xna.Framework;
 
-// https://andrewlock.net/exploring-dotnet-6-part-3-exploring-the-code-behind-webapplicationbuilder/
 namespace MonoGame.Extensions.Hosting;
 
+// for reference, see:
+// https://andrewlock.net/exploring-dotnet-6-part-3-exploring-the-code-behind-webapplicationbuilder/
 /// <summary>
 /// A builder for MonoGame applications and services.
 /// </summary>
@@ -116,7 +117,7 @@ public sealed class GameApplicationBuilder
 
         return this;
     }
-    
+
     private void ConfigureDefaultLogging()
     {
         // By default, if no one else has configured logging, add a "no-op" LoggerFactory

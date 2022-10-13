@@ -5,13 +5,12 @@ using System.Reflection;
 
 namespace MonoGame.Extensions.Hosting;
 
-/// <summary>
-/// https://andrewlock.net/introducing-ihostlifetime-and-untangling-the-generic-host-startup-interactions/
-/// </summary>
+// for reference, see:
+// https://andrewlock.net/introducing-ihostlifetime-and-untangling-the-generic-host-startup-interactions/
 internal sealed class GameHostService : IHostedService
 {
     // Used to stop the host service in the integration tests
-    // TODO: Replace this property with a CancellationTokenSource to allow cancelling executing task from provided token. This would allow us to run the integration tests in paralle.
+    // TODO: Replace this property with a CancellationTokenSource to allow cancelling executing task from provided token. This would allow us to run the integration tests in parallel.
     // https://github.com/dotnet/extensions/issues/3218
     // https://github.com/dotnet/runtime/blob/main/src/libraries/Microsoft.Extensions.Hosting.Abstractions/src/BackgroundService.cs
     internal static IHostedService? HostService { get; private set; }

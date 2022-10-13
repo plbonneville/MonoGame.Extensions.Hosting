@@ -3,10 +3,6 @@ using System.Collections;
 
 namespace MonoGame.Extensions.Hosting;
 
-
-/// <summary>
-/// 
-/// </summary>
 /// <remarks>
 /// Based on:
 /// https://github.com/dotnet/maui/blob/main/src/Core/src/Hosting/Internal/MauiApplicationServiceCollection.cs

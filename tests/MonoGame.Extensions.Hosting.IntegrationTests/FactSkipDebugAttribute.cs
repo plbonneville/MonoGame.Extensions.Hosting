@@ -13,5 +13,9 @@ public class FactSkipWhenDebuggerIsAttachedAttribute : FactAttribute
         {
             Skip = "This integration test can only run when no debugger are attached.";
         }
+
+#if DEBUG
+        Skip = "This integration test can only run when no debugger are attached.";
+#endif
     }
 }

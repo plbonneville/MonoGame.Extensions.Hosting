@@ -30,13 +30,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples.Mediatr", "samples
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "platforms", "platforms", "{B10652CD-0BC0-42A9-828B-3494138F8529}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples.Configuration", "samples\Examples.Configuration\Examples.Configuration.csproj", "{177C6738-CDAD-48E6-A56D-35CA73A90572}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples.DesktopGL", "samples\platforms\Examples.DesktopGL\Examples.DesktopGL.csproj", "{0EBDF1EE-D5A2-4252-BDCD-CD98602468E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Examples.WindowsDX", "samples\platforms\Examples.WindowsDX\Examples.WindowsDX.csproj", "{B7848807-FEFE-43DE-9FBA-5E740B697D59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoGame.Extensions.Hosting.IntegrationTests", "tests\MonoGame.Extensions.Hosting.IntegrationTests\MonoGame.Extensions.Hosting.IntegrationTests.csproj", "{86021668-D224-46A7-ACD4-9614C3F7FFDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonoGame.Extensions.Hosting.IntegrationTests", "tests\MonoGame.Extensions.Hosting.IntegrationTests\MonoGame.Extensions.Hosting.IntegrationTests.csproj", "{86021668-D224-46A7-ACD4-9614C3F7FFDE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,10 +66,6 @@ Global
 		{9C6401D2-7F56-4AB8-A251-7A8960589A3E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9C6401D2-7F56-4AB8-A251-7A8960589A3E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9C6401D2-7F56-4AB8-A251-7A8960589A3E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{177C6738-CDAD-48E6-A56D-35CA73A90572}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{177C6738-CDAD-48E6-A56D-35CA73A90572}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{177C6738-CDAD-48E6-A56D-35CA73A90572}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{177C6738-CDAD-48E6-A56D-35CA73A90572}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0EBDF1EE-D5A2-4252-BDCD-CD98602468E0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0EBDF1EE-D5A2-4252-BDCD-CD98602468E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0EBDF1EE-D5A2-4252-BDCD-CD98602468E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -96,7 +90,6 @@ Global
 		{4E9F9F72-FF55-47F0-A7D6-CD02A17E12C7} = {AC2AA031-0FCF-4181-988A-D957623A97C2}
 		{9C6401D2-7F56-4AB8-A251-7A8960589A3E} = {AC2AA031-0FCF-4181-988A-D957623A97C2}
 		{B10652CD-0BC0-42A9-828B-3494138F8529} = {AC2AA031-0FCF-4181-988A-D957623A97C2}
-		{177C6738-CDAD-48E6-A56D-35CA73A90572} = {AC2AA031-0FCF-4181-988A-D957623A97C2}
 		{0EBDF1EE-D5A2-4252-BDCD-CD98602468E0} = {B10652CD-0BC0-42A9-828B-3494138F8529}
 		{B7848807-FEFE-43DE-9FBA-5E740B697D59} = {B10652CD-0BC0-42A9-828B-3494138F8529}
 		{86021668-D224-46A7-ACD4-9614C3F7FFDE} = {86313242-DDA0-4A78-AB46-C84FE1982490}

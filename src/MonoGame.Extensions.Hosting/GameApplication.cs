@@ -4,13 +4,11 @@ using Microsoft.Extensions.Hosting;
 
 namespace MonoGame.Extensions.Hosting;
 
+// Based on:
+// https://github.com/dotnet/maui/blob/main/src/Core/src/Hosting/MauiApp.cs
 /// <summary>
-/// 
+/// Game application used to configure the game and host services.
 /// </summary>
-/// <remarks>
-/// Based on:
-/// https://github.com/dotnet/maui/blob/main/src/Core/src/Hosting/MauiApp.cs
-/// </remarks>
 public sealed class GameApplication : IDisposable
 {
     private readonly IHost _host;
