@@ -3,7 +3,9 @@ name: Build, Test, and Publish
 on: [push, pull_request]
 
 jobs:
+  ############################################################################
   # JOB to run change detection
+  ############################################################################
   changes:
     runs-on: ubuntu-latest
     # Required permissions
@@ -14,6 +16,7 @@ jobs:
       src: ${{ steps.filter.outputs.src }}
     steps:
       - uses: actions/checkout@v2
+      
       - uses: dorny/paths-filter@v2
         id: filter
         with:
@@ -21,10 +24,11 @@ jobs:
             src:
               - 'src/**'
 
+  ############################################################################
+  # JOB to build and test the solution
+  ############################################################################
   build:
     env:
-      BUILD_CONFIG: "Release"
-      SOLUTION: "MonoGame.Extensions.Hosting.sln"
       PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
 
     name: build-${{ matrix.os }}
@@ -46,18 +50,21 @@ jobs:
         run: dotnet sln remove ./samples/platforms/Examples.WindowsDX/
 
       - name: Restore dependencies
-        run: dotnet restore $SOLUTION
+        run: dotnet restore
 
       - name: Build
-        run: dotnet build $SOLUTION --nologo --no-restore --configuration Release
+        run: dotnet build --nologo --no-restore --configuration Release
 
       - name: Test
-        run: dotnet test $SOLUTION --nologo --no-restore --no-build --verbosity normal --configuration Release
+        run: dotnet test --nologo --no-restore --no-build --verbosity normal --configuration Release
 
       - name: Pack
         if: matrix.os == 'ubuntu-latest'
         run: dotnet pack $PROJECT --nologo --no-restore --no-build --configuration Release
 
+  ############################################################################
+  # JOB to publish the NuGet package
+  ############################################################################
   publish:
     env:
       PROJECT: "./src/MonoGame.Extensions.Hosting/MonoGame.Extensions.Hosting.csproj"
