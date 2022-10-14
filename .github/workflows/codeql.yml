@@ -19,17 +19,25 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - uses: actions/checkout@v3    
+    - uses: actions/checkout@v3
+    
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
         languages: csharp        
+    
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v3
       with:
         dotnet-version: '6.0.x'
-        include-prerelease: true        
+        include-prerelease: true  
+    
+    - name: Remove the WindowsDX sample if not on Windows
+      if: runner.os != 'Windows'
+      run: dotnet sln remove ./samples/platforms/Examples.WindowsDX/
+    
     - name: Autobuild
       uses: github/codeql-action/autobuild@v2      
+    
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v2
